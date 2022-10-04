@@ -29,7 +29,7 @@ namespace ChallengesWithTestsMark8
 
         public double SumOfMinAndMax(IEnumerable<double> numbers)
         {
-            if (numbers == null) return 0;
+            if (numbers == null || !numbers.Any()) return 0;
             double minimum = numbers.Min();
             double maximum = numbers.Max();
             return minimum + maximum;
@@ -42,7 +42,9 @@ namespace ChallengesWithTestsMark8
 
         public int Sum(int[] numbers)
         {
+            //I am going to break this code into its constituent ones and zeroes and then beat up the ones and zeroes
             int sum = 0;
+            if (numbers == null || numbers.Length == 0) return sum;
             foreach (int number in numbers)
             {
                 sum += number;
@@ -53,6 +55,7 @@ namespace ChallengesWithTestsMark8
         public int SumEvens(int[] numbers)
         {
             int sum = 0;
+            if (numbers == null) return sum;
             foreach (int number in numbers)
             {
                 sum = (number % 2 == 0) ? sum + number : sum;
@@ -62,6 +65,7 @@ namespace ChallengesWithTestsMark8
 
         public bool IsSumOdd(List<int> numbers)
         {
+            if (numbers == null) return false;
             int sum = 0;
             foreach (int number in numbers)
             {
